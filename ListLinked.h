@@ -72,7 +72,7 @@ public:
         return data;
     }
 
-    T get(int pos) override {
+    T get(int pos) const override {
         if (pos < 0 || pos >= n) {
             throw out_of_range("Posición inválida en get");
         }
@@ -83,7 +83,7 @@ public:
         return current->data;
     }
 
-    int search(T e) override {
+    int search(T e) const override {
         Node<T>* current = first;
         int pos = 0;
         while (current != nullptr) {
@@ -96,11 +96,11 @@ public:
         return -1;
     }
 
-    bool empty() override {
+    bool empty() const override {
         return n == 0;
     }
 
-    int size() override {
+    int size() const override {
         return n;
     }
 
